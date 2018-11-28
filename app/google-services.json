@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "413024577696",
+    "firebase_url": "https://snap-in-ea619.firebaseio.com",
+    "project_id": "snap-in-ea619",
+    "storage_bucket": "snap-in-ea619.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413024577696:android:2817aac48892df8f",
+        "android_client_info": {
+          "package_name": "com.example.hp.snapin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413024577696-qs5bldk6i7mgqk0k0tn318kjfi2dd7eq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaDP3ToPnFktmky5ZX-50ieQwKin37Nu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
