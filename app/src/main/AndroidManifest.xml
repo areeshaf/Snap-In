@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".CreateSnapActivity">
         </activity>
+        <activity android:name=".UsersActivity">
+        </activity>
     </application>
 
 </manifest>

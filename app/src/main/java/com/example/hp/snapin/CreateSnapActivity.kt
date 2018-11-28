@@ -60,6 +60,8 @@ class CreateSnapActivity : AppCompatActivity() {
             Toast.makeText(this,"Upload Fails!",Toast.LENGTH_SHORT).show()
         }.addOnSuccessListener {
             Log.i("Image","uploaded")
+            val intent=Intent(this,UsersActivity::class.java)
+            startActivity(intent)
         }
     }
 

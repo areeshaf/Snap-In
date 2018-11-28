@@ -13,6 +13,7 @@ import android.support.annotation.NonNull
 import com.google.android.gms.tasks.OnCompleteListener
 import android.R.attr.password
 import android.content.Intent
+import com.google.firebase.database.FirebaseDatabase
 
 
 class MainActivity : AppCompatActivity() {
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                                 task ->
                             if(task.isSuccessful){
                                 //add to database
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.result.user.uid).child("email").push().setValue(emailEditText?.text.toString())
                                 login()
                             }else{
                                 Toast.makeText(this,"Login Failed! Try again.",Toast.LENGTH_SHORT).show()
