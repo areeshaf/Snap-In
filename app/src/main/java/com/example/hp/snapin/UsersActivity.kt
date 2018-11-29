@@ -1,7 +1,10 @@
 package com.example.hp.snapin
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Adapter
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.google.firebase.database.ChildEventListener
@@ -14,6 +17,8 @@ class UsersActivity : AppCompatActivity() {
 
     var userListView:ListView?=null
     var emails:ArrayList<String>?= ArrayList()
+    var keys:ArrayList<String>?= ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +46,7 @@ class UsersActivity : AppCompatActivity() {
                  //To change body of created functions use File | Settings | File Templates.
                 val email=p0.child("email").value as String
                 emails?.add(email)
+                keys?.add(p0?.key!!)
                 adapter.notifyDataSetChanged()
 
 
@@ -51,6 +57,17 @@ class UsersActivity : AppCompatActivity() {
             }
 
         })
+
+        userListView?.onItemClickListener=AdapterView.OnItemClickListener { adapterView, view, i, l ->
+            val snapsMap : Map<String, String>
+            snapsMap= mapOf("from" to "","imageName" to "","imageUrl" to "","message" to "")
+            FirebaseDatabase.getInstance().getReference().child("users").child(keys?.get(i)!!).child("snaps").push().setValue(snapsMap)
+            val intent=Intent(this,Main2Activity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+
+
 
     }
 }
