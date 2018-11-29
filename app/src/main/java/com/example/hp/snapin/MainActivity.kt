@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                                 task ->
                             if(task.isSuccessful){
                                 //add to database
-                                FirebaseDatabase.getInstance().getReference().child("users").child(task.result.user.uid).child("email").push().setValue(emailEditText?.text.toString())
+                                FirebaseDatabase.getInstance().getReference().child("users").child(task.result.user.uid).child("email").setValue(emailEditText?.text.toString())
                                 login()
                             }else{
                                 Toast.makeText(this,"Login Failed! Try again.",Toast.LENGTH_SHORT).show()
