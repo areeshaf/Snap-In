@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         //move to next activity
         val intent=Intent(this,Main2Activity::class.java)
+        val newIntent = "new intent";
         startActivity(intent)
     }
 
